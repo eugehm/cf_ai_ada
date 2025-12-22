@@ -18,7 +18,12 @@
 			"binding": "KV",
 			"preview_id": "bacaf57305cf4377bd5542a281548cad"
 		}
-	]
+	],
+	"assets":
+	{
+		"binding": "ASSETS",
+		"directory": "./public/"
+	}
 
 	/**
 	 * Smart Placement

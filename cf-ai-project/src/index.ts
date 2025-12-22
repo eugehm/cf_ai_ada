@@ -6,7 +6,7 @@
 
 import { Ai  } from '@cloudflare/ai'
 import { Hono } from 'hono'
-import template from './template.html'
+import index from './index.html'
 
 export interface Env {
 	AI: any,
@@ -16,7 +16,7 @@ export interface Env {
 const app = new Hono<{ Bindings: Env }>()
 
 app.get("/", c => {
-	return c.html(template)
+	return c.html(index)
 })
 
 app.get("/stream", async c => {
@@ -82,7 +82,9 @@ app.get("/stream", async c => {
 						if (typeof json.response === "string") {
 							assistContent += json.response
 						}
-					} catch {}
+					} catch {
+						console.error("Invalid data.", data)
+					}
 				}
 			}
 
