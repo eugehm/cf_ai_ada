@@ -42,7 +42,7 @@ app.get("/stream", async c => {
 
 	// compose prompt
 	const messages = [
-		{ role: "system", content: "You are a helpful assistant." },
+		{ role: "system", content: "You are a helpful assistant, and your name is Ada, inspired by Ada Lovelace." },
 		...prevMsgs,
 		{ role: "user", content: question }
 	]

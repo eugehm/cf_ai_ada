@@ -39,6 +39,7 @@ function sendResp() {
     const url = `/stream?query=${encodeURIComponent(question)}&session=${session}`
     const source = new EventSource(url)
 
+    let buf = ""
     source.onmessage = (event) => {
         if (event.data === "[DONE]") {
             source.close()
@@ -50,7 +51,10 @@ function sendResp() {
         try {
             const data = JSON.parse(event.data)
             if (typeof data.response == "string") {
-                aiMsg.textContent += data.response
+                buf += data.response
+                const dirty = marked.parse(buf)
+                const clean = DOMPurify.sanitize(dirty)
+                aiMsg.innerHTML = clean
                 scrollToBottom()
             }
         } catch {

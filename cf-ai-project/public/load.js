@@ -6,13 +6,6 @@
 
 const chat = document.getElementById("chat")
 
-// get or create session ID
-let session = sessionStorage.getItem("session")
-if (!session) {
-    session = Math.random().toString(36).substring(2)
-    sessionStorage.setItem("session", session)
-}
-
 // helper function to scroll chat to bottom
 function scrollToBottom() {
     chat.scrollTop = chat.scrollHeight;
@@ -29,7 +22,14 @@ async function loadMsgs() {
         data.messages.forEach(msg => {
             const div = document.createElement("div")
             div.className = "message " + (msg.role == "user" ? "user-message" : "ai-message")
-            div.textContent = msg.content
+            
+            if (msg.role === "user") {
+                div.textContent = msg.content
+            } else {
+                const dirty = marked.parse(msg.content)
+                const clean = DOMPurify.sanitize(dirty)
+                div.innerHTML = clean
+            }
             chat.appendChild(div)
         })
 

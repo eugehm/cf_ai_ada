@@ -11,19 +11,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"/>
-    <title>AI Chatbot</title>
+    <title>Ada</title>
   </head>
   <body>
     <div class="content">
       <header>
-        <h1>AI Chatbot</h1>
+        <h1>Ada</h1>
       </header>
       <div id="chat" class="chat"></div>
       <div class="input-area">
-        <input type="text" id="user-input" placeholder="Ask the AI anything!"/>
+        <input type="text" id="user-input" placeholder="Ask Ada anything!"/>
         <button id="ask-button">Ask</button>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+    <script src="session.js"></script>
     <script src="load.js"></script>
     <script src="script.js"></script>
   </body>

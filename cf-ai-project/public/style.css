@@ -8,8 +8,8 @@
 }
 
 body {
-    background: #212121;
-    color: #f9f9f9;
+    background: #090F1A;
+    color: #3A4264;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,16 +76,21 @@ header {
     word-wrap: break-word;
 }
 
+.message ul, .message ol {
+    padding-left: 40px;
+    margin: 5px 0;
+}
+
 .user-message {
-    background: #f9f9f9;
-    color: #212121;
+    background: #3A4264;
+    color: #090F1A;
     /* align-self: flex-end; */
     margin-left: auto;
 }
 
 .ai-message {
     background: rgba(0, 0, 0, 0.2);
-    color: #f9f9f9;
+    color: #3A4264;
     /* align-self: flex-start; */
     margin-right: auto;
 }
@@ -100,14 +105,14 @@ header {
     flex: 1;
     padding: 10px;
     background: transparent;
-    color: #f9f9f9;
+    color: #3A4264;
     outline: none;
     border: none;
 }
 
 #ask-button {
     background: rgba(255, 255, 255, 0.1);
-    color: #f9f9f9;
+    color: #3A4264;
     outline: none;
     border: none;
     padding: 10px 15px;
