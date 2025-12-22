@@ -12,7 +12,13 @@
 	},
 	"ai": {
 		"binding": "AI"
-	}
+	},
+	"kv_namespaces": [
+		{
+			"binding": "KV",
+			"preview_id": "bacaf57305cf4377bd5542a281548cad"
+		}
+	]
 
 	/**
 	 * Smart Placement

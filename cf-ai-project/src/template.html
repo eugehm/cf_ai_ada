@@ -60,16 +60,25 @@
     </div>
 
     <script>
-      const response= document.getElementById("response")
+      const response = document.getElementById("response")
       const form = document.getElementById("query-form")
 
       form.addEventListener("submit", async (e) => {
         e.preventDefault()
         response.textContent = ""
         
-        const url = `/stream?query=${e.target.query.value}`
+        // get session ID (or generate new one)
+        let session = sessionStorage.getItem("session")
+        if (!session) {
+          session = Math.random().toString(36).substring(2)
+          sessionStorage.setItem("session", session)
+        }
+
+        // get query
+        const url = `/stream?query=${e.target.query.value}&session=${session}`
         const source = new EventSource(url)
 
+        // get streamed response
         source.onmessage = (event) => {
           if (event.data === "[DONE]") {
             source.close()
