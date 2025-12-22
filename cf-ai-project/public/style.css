@@ -9,7 +9,7 @@
 
 body {
     background: #090F1A;
-    color: #3A4264;
+    color: #626d9e;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,16 +82,14 @@ header {
 }
 
 .user-message {
-    background: #3A4264;
-    color: #090F1A;
-    /* align-self: flex-end; */
+    background: #626d9e;
+    color: #fafaff;
     margin-left: auto;
 }
 
 .ai-message {
     background: rgba(0, 0, 0, 0.2);
-    color: #3A4264;
-    /* align-self: flex-start; */
+    color: #b2bef4;
     margin-right: auto;
 }
 
@@ -105,14 +103,14 @@ header {
     flex: 1;
     padding: 10px;
     background: transparent;
-    color: #3A4264;
+    color: #fafaff;
     outline: none;
     border: none;
 }
 
 #ask-button {
     background: rgba(255, 255, 255, 0.1);
-    color: #3A4264;
+    color: #b2bef4;
     outline: none;
     border: none;
     padding: 10px 15px;

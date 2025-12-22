@@ -1,7 +1,7 @@
 /*
  * session.js
  *
- * Handle session ID creation and persistence.
+ * Handle session ID creation and persistence through cookies.
  */
 
 function getCookie(name) {

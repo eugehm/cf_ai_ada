@@ -105,9 +105,9 @@ app.get("/stream", async c => {
 				{ role: "assistant", content: assistContent }
 			]
 
-			// cap to last 10 turns
-			if (updatedMsgs.length > 20) {
-				updatedMsgs = updatedMsgs.slice(updatedMsgs.length - 20)
+			// cap to last 20 turns
+			if (updatedMsgs.length > 40) {
+				updatedMsgs = updatedMsgs.slice(updatedMsgs.length - 40)
 			}
 
 			// save to KV

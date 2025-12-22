@@ -13,12 +13,13 @@ function scrollToBottom() {
 
 async function loadMsgs() {
     try {
-        const res = await fetch(`/session?session=${session}`)
-        if (!res.ok) return
-
-        const data = await res.json()
+        // get previous messages
+        const response = await fetch(`/session?session=${session}`)
+        if (!response.ok) return
+        const data = await response.json()
         if (!data.messages) return
 
+        // display previous messages in browser
         data.messages.forEach(msg => {
             const div = document.createElement("div")
             div.className = "message " + (msg.role == "user" ? "user-message" : "ai-message")

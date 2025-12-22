@@ -10,9 +10,11 @@ const button = document.getElementById("ask-button")
 // handle sending response
 let isFetching = false
 function sendResp() {
+    // let query finish running before running a new one
     if (isFetching) return
     isFetching = true
 
+    // get user's question
     const question = input.value.trim()
     if (!question) {
         isFetching = false
@@ -38,9 +40,9 @@ function sendResp() {
     // stream AI response
     const url = `/stream?query=${encodeURIComponent(question)}&session=${session}`
     const source = new EventSource(url)
-
     let buf = ""
     source.onmessage = (event) => {
+        // stop if done streaming
         if (event.data === "[DONE]") {
             source.close()
             isFetching = false
@@ -48,6 +50,7 @@ function sendResp() {
             return
         }
 
+        // print parsed response to browser as it's streamed
         try {
             const data = JSON.parse(event.data)
             if (typeof data.response == "string") {
@@ -63,7 +66,7 @@ function sendResp() {
     }
 }
 
-// event listener for button
+// event listener for ask button
 button.addEventListener("click", sendResp)
 input.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
