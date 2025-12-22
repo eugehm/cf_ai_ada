@@ -17,8 +17,8 @@ body {
 }
 
 .content {
-    width: 400px;
-    height: 600px;
+    width: 70%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.05);
@@ -41,6 +41,27 @@ header {
     overflow-y: auto;
     padding: 15px;
     background: transparent;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) rgba(255, 255, 255, 0.05);
+}
+
+.chat::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.chat::-webkit-scrollbar-thum:hover {
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .message {
@@ -50,20 +71,22 @@ header {
     max-width: 80%;
     line-height: 1.4;
     box-shadow: 0px 1px 3px rgba(255, 255, 255, 0.18);
-    font-size: 80%;
+    font-size: 90%;
+    display: table;
+    word-wrap: break-word;
 }
 
 .user-message {
     background: #f9f9f9;
     color: #212121;
-    align-self: flex-end;
+    /* align-self: flex-end; */
     margin-left: auto;
 }
 
 .ai-message {
     background: rgba(0, 0, 0, 0.2);
     color: #f9f9f9;
-    align-self: flex-start;
+    /* align-self: flex-start; */
     margin-right: auto;
 }
 

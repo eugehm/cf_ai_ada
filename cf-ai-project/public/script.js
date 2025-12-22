@@ -4,21 +4,8 @@
  * Stream AI response to browser.
  */
 
-const chat = document.getElementById("chat")
 const input = document.getElementById("user-input")
 const button = document.getElementById("ask-button")
-
-// get or create session ID
-let session = sessionStorage.getItem("session")
-if (!session) {
-    session = Math.random().toString(36).substring(2)
-    sessionStorage.setItem("session", session)
-}
-
-// helper function to scroll chat to bottom
-function scrollToBottom() {
-    chat.scrollTop = chat.scrollHeight;
-}
 
 // handle sending response
 let isFetching = false

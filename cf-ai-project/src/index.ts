@@ -15,10 +15,20 @@ export interface Env {
 
 const app = new Hono<{ Bindings: Env }>()
 
+// regular index endpoint
 app.get("/", c => {
 	return c.html(index)
 })
 
+// endpoint for loading stored messages
+app.get("/session", async c => {
+	const session = c.req.query("session") || "default"
+	const prevMsgsRaw = await c.env.KV.get(session)
+	const prevMsgs = prevMsgsRaw ? JSON.parse(prevMsgsRaw) : []
+	return c.json({ messages : prevMsgs })
+})
+
+// endpoint for calling the AI
 app.get("/stream", async c => {
 	const ai = new Ai(c.env.AI)
 
