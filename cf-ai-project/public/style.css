@@ -11,7 +11,7 @@
 
 body {
     background: #090F1A;
-    color: #626d9e;
+    color: #b2bef4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,16 +23,16 @@ body {
     height: 90%;
     display: flex;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(178, 190, 244, 0.2);
     backdrop-filter: blur(10px);
-    border: solid rgba(255, 255, 255, 0.08);
+    border: solid rgba(178, 190, 244, 0.1);
     border-radius: 10px;
-    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(178, 190, 244, 0.08);
     overflow: hidden;
 }
 
 header {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
     padding: 10px;
     text-align: center;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.05);
@@ -73,9 +73,9 @@ header {
     max-width: 80%;
     line-height: 1.4;
     box-shadow: 0px 1px 3px rgba(255, 255, 255, 0.18);
-    font-size: 90%;
     display: table;
     word-wrap: break-word;
+    font-size: medium;
 }
 
 .message ul, .message ol {
@@ -90,24 +90,29 @@ header {
 }
 
 .ai-message {
-    background: rgba(0, 0, 0, 0.2);
+    background: #090F1A;
     color: #b2bef4;
     margin-right: auto;
 }
 
 .input-area {
     display: flex;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 #user-input {
     flex: 1;
-    padding: 10px;
+    padding: 5px;
     background: transparent;
     color: #fafaff;
     outline: none;
     border: none;
+    font-size: medium;
+}
+
+#user-input::placeholder {
+    color: #b2bef4;
 }
 
 #ask-button {
@@ -115,11 +120,12 @@ header {
     color: #b2bef4;
     outline: none;
     border: none;
-    padding: 10px 15px;
+    padding: 15px 20px;
     margin-left: 10px;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s;
+    font-size: medium;
 }
 
 #ask-button:hover {
