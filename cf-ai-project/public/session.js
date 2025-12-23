@@ -21,6 +21,3 @@ if (!session) {
     session = Math.random().toString(36).substring(2)
     setCookie("session", session, 30)
 }
-
-// expose session ID to other scripts
-window.SESSION_ID = session

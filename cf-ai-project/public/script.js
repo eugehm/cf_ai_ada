@@ -50,7 +50,7 @@ function sendResp() {
             return
         }
 
-        // print parsed response to browser as it's streamed
+        // print markdown response to browser as it's streamed
         try {
             const data = JSON.parse(event.data)
             if (typeof data.response == "string") {
