@@ -1,1 +1,52 @@
-# cf_ai_project
+# Ada - An AI-powered Chatbot
+
+## Overview
+Ada is an AI-powered application built on Cloudflare Workers and Llama 3.3. It features:
+- **Chat interface** for user input
+- **Memory management** with KV storage
+- Streaming AI responses
+- Deployed on Cloudflare Workers & Pages
+
+## Demo
+You can try the live app here: [Ada](https://cf-ai-project.eugehm.workers.dev/).
+
+## Features
+- Real-time chat with AI
+- Markdown formatting for AI responses via `marked`
+- Persistent memory for last 20 turns
+- Secure handling of user input
+
+## Setup / Running Locally
+1. Clone the repo:
+```bash
+git clone https://github.com/<your-username>/cf_ai_<project-name>.git
+```
+2. Install dependencies:
+```bash
+npm install
+```
+3. Configure environment variables/bindings in `wrangler.jsonc`. Replace <your-kv-namespace-id> and <your-kv-namespace-id-preview> with your own KV namespace IDs:
+```json
+{
+	"name": "cf-ai-project",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-12-19",
+	"ai": {
+        "binding": "AI"
+    },
+	"kv_namespaces": [{
+        "binding": "KV",
+        "id": <your-kv-namespace-id>,
+        "preview_id": <your-kv-namespace-id-preview>
+	}],
+	"assets": {
+        "binding": "ASSETS",
+        "directory": "./public/"
+    }
+}
+```
+4. Run locally
+```bash
+npm run dev
+```
+5. Open given localhost link in your browser to test the app.
