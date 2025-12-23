@@ -36,7 +36,7 @@ app.get("/stream", async c => {
 	const question = c.req.query("query") || "Hello!"
 	const session = c.req.query("session") || "default"
 
-	// get previous response if any
+	// get previous responses if any
 	const prevMsgsRaw = await c.env.KV.get(session)
 	const prevMsgs = prevMsgsRaw ? JSON.parse(prevMsgsRaw) : []
 
@@ -85,7 +85,7 @@ app.get("/stream", async c => {
 
 					if (!line.startsWith("data: ")) continue
 					const data = line.slice(6)
-					if (data === "[DONE]") continue
+					if (data === "[DONE]") break
 
 					try {
 						const json = JSON.parse(data)

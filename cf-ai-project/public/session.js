@@ -15,7 +15,7 @@ function setCookie(name, value, days) {
     document.cookie = `${name}=${value}; path=/; expires=${expires.toUTCString()}`
 }
 
-// get or create session ID
+// get or create session ID with cookies
 let session = getCookie("session")
 if (!session) {
     session = Math.random().toString(36).substring(2)

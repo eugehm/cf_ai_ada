@@ -66,7 +66,7 @@ function sendResp() {
     }
 }
 
-// event listener for ask button
+// event listener for ask button or enter key
 button.addEventListener("click", sendResp)
 input.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
