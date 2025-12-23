@@ -8,7 +8,7 @@ Ada is an AI-powered application built on Cloudflare Workers and Llama 3.3. It f
 - Deployed on Cloudflare Workers & Pages
 
 ## Demo
-You can try the live app [here](https://cf-ai-project.eugehm.workers.dev/).
+You can try the live app [here](https://cf-ai-ada.eugehm.workers.dev/).
 
 ## Features
 - Real-time chat with AI
