@@ -4,7 +4,7 @@
  * Entry point for Cloudflare Worker.
  */
 
-import { Ai  } from '@cloudflare/ai'
+import { Ai } from '@cloudflare/ai'
 import { Hono } from 'hono'
 import index from './index.html'
 
